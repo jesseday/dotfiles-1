@@ -6,3 +6,4 @@ if [ -f "$local_hook" ]; then
   . "$local_hook";
 fi
 
+exit 0
