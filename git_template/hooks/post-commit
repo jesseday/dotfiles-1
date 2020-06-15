@@ -3,3 +3,4 @@
 local_hook="$HOME"/.git_template.local/hooks/post-commit
 [ -f "$local_hook" ] && . "$local_hook"
 
+exit 0

@@ -2,3 +2,8 @@
 case "$1" in
   rebase) exec .git/hooks/post-merge ;;
 esac
+
+local_hook="$HOME"/.git_template.local/hooks/post-rewrite
+[ -f "$local_hook" ] && . "$local_hook"
+
+exit 0
