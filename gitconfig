@@ -1,6 +1,7 @@
 [init]
   defaultBranch = main
   templatedir = ~/.git_template
+	defaultBranch = main
 [push]
   default = current
 [color]
@@ -14,8 +15,9 @@
   pf = push --force-with-lease
   st = status
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/jesse/.gitignore
   autocrlf = input
+  filemode = false
 [merge]
   ff = only
 [commit]
@@ -28,3 +30,17 @@
   path = ~/.gitconfig.local
 [diff]
   colorMoved = zebra
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Jesse Day
+	email = jesse.day@adaptagency.com
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
